@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport"/>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+</head>
+<style type="text/css">
+*{margin: 0;padding: 0;box-sizing: border-box;}
+.game_wrap{width: 240px; height: 80px;box-sizing:  content-box; border-radius: 15px; border: 20px solid #ffcc21;overflow: hidden;margin: 10px; box-shadow: 0px 0px 15px  rgba(0,0,0,.5) inset}
+.game_item{width: 33.333%;height: 80px; float: left; border-left: 5px solid #ffcc21}
+.game_item:first-child{ border-left: none }
+.game_item li{ list-style: none;width: 100%; height: 80px; line-height: 80px;text-align: center; position: relative; font-size: 50px; }
+</style>
+<body>
+    <div class="game_wrap">
+	    <div class="game_item">
+	        <ul></ul>
+	    </div>
+	    <div class="game_item">
+	        <ul></ul>
+	    </div>
+	    <div class="game_item">
+	        <ul></ul>
+	    </div>
+	</div>
+	<button id="btn" style="background: #111;border: none;padding: 10px 20px;color: #fff;font-size: 16px;cursor: pointer;margin: 10px;">开始抽奖</button>
+</body>
+<script src="dist/LuckGame.js"></script>
+<script>
+var game = new LuckGame({
+    len : 4, 
+    speed : 3000, 
+    circle : 5, 
+});
+btn.onclick = function(){
+	game.start([1,1,1],function(){
+	    alert('恭喜你中奖了')
+	})
+}
+</script>
+</html>
